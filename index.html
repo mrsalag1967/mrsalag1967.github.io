@@ -1,99 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marcio Salgado | Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marcio Salgado | Software Developer</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Pequeños ajustes extra */
+    .brand-gradient { background: linear-gradient(90deg,#1e40af 0%, #5b21b6 100%); }
+    .btn-primary { @apply bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500; }
+    .card { @apply bg-white rounded-lg shadow p-6; }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-gray-50 text-gray-900">
 
   <!-- Header -->
-  <header class="bg-white shadow-md p-6 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-indigo-700">Marcio Salgado</h1>
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <!-- Logo image (transparent background) -->
+        <img src="logo-marcio.png" alt="Marcio Salgado logo" class="w-12 h-12 object-contain">
+        <div>
+          <div class="text-lg font-bold text-indigo-700">Software Developer</div>
+          <div class="text-sm text-gray-500"></div>
+        </div>
+      </div>
 
-    <nav class="space-x-6 hidden md:block">
-      <a href="#about" class="hover:text-indigo-700 lang" data-en="About" data-es="Sobre mí">About</a>
-      <a href="#projects" class="hover:text-indigo-700 lang" data-en="Projects" data-es="Proyectos">Projects</a>
-      <a href="#contact" class="hover:text-indigo-700 lang" data-en="Contact" data-es="Contacto">Contact</a>
-    </nav>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="#home" class="text-sm font-medium hover:text-indigo-600">Home</a>
+        <a href="#about" class="text-sm font-medium hover:text-indigo-600">About</a>
+        <a href="#projects" class="text-sm font-medium hover:text-indigo-600">Projects</a>
+        <a href="#services" class="text-sm font-medium hover:text-indigo-600">Services</a>
+        <a href="#contact" class="text-sm font-medium hover:text-indigo-600">Contact</a>
+        <a href="https://skyailogic.com" target="_blank" rel="noopener" class="ml-2 text-sm font-semibold text-indigo-700 border border-indigo-700 px-3 py-1 rounded hover:bg-indigo-50">Visit my company →</a>
+        <button id="lang-toggle" class="ml-4 px-3 py-1 bg-indigo-600 text-white rounded text-sm">🇺🇸 EN</button>
+      </nav>
 
-    <button id="lang-toggle" class="ml-4 px-3 py-1 bg-indigo-600 text-white rounded">🇺🇸 EN</button>
+      <!-- Mobile menu -->
+      <div class="md:hidden flex items-center">
+        <button id="lang-toggle-mobile" class="mr-3 px-2 py-1 bg-indigo-600 text-white rounded text-sm">🇺🇸 EN</button>
+        <button id="menu-btn" class="p-2 rounded bg-gray-100">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile nav content -->
+    <div id="mobile-nav" class="hidden bg-white border-t">
+      <div class="px-4 py-3 space-y-2">
+        <a href="#home" class="block">Home</a>
+        <a href="#about" class="block">About</a>
+        <a href="#projects" class="block">Projects</a>
+        <a href="#services" class="block">Services</a>
+        <a href="#contact" class="block">Contact</a>
+        <a href="https://skyailogic.com" target="_blank" rel="noopener" class="block">Visit my company →</a>
+      </div>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="text-center py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-    <h2 class="text-4xl font-bold mb-4 lang" data-en="Welcome to my digital world" data-es="Bienvenido a mi mundo digital">
-      Welcome to my digital world
-    </h2>
-    <p class="text-lg lang" data-en="Software developer passionate about AI, innovation, and modern web design."
-       data-es="Desarrollador de software apasionado por la IA, la innovación y el diseño web moderno.">
-      Software developer passionate about AI, innovation, and modern web design.
-    </p>
-  </section>
+  <main class="max-w-6xl mx-auto px-4">
 
-  <!-- About -->
-  <section id="about" class="max-w-4xl mx-auto py-16 px-6">
-    <h3 class="text-2xl font-bold mb-4 text-indigo-700 lang" data-en="About Me" data-es="Sobre mí">About Me</h3>
-    <p class="lang" data-en="I am a software developer specialized in building intelligent and scalable digital solutions using modern web technologies and Artificial Intelligence."
-       data-es="Soy un desarrollador de software especializado en crear soluciones digitales inteligentes y escalables utilizando tecnologías web modernas e Inteligencia Artificial.">
-       I am a software developer specialized in building intelligent and scalable digital solutions using modern web technologies and Artificial Intelligence.
-    </p>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="bg-white py-16 px-6">
-    <h3 class="text-2xl font-bold mb-8 text-center text-indigo-700 lang" data-en="Projects" data-es="Proyectos">Projects</h3>
-    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg">
-        <h4 class="text-xl font-bold mb-2 text-indigo-700 lang" data-en="SkyAILogic" data-es="SkyAILogic">SkyAILogic</h4>
-        <p class="mb-2 lang" data-en="An AI-powered software development company focused on intelligent web and mobile solutions."
-           data-es="Empresa de desarrollo de software impulsada por IA, enfocada en soluciones web y móviles inteligentes.">
-           An AI-powered software development company focused on intelligent web and mobile solutions.
-        </p>
-        <a href="https://skyailogic.com" target="_blank" class="text-indigo-700 hover:underline">🌐 skyailogic.com</a>
+    <!-- Hero -->
+    <section id="home" class="brand-gradient text-white rounded-b-2xl mt-8 p-10 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-3 lang" data-en="Welcome to my digital world" data-es="Bienvenido a mi mundo digital">
+        Welcome to my digital world
+      </h1>
+      <p class="max-w-3xl mx-auto text-lg lang" data-en="I design and build intelligent software solutions using AI and modern web tools."
+         data-es="Diseño y desarrollo soluciones de software inteligentes con IA y tecnologías web modernas.">
+        I design and build intelligent software solutions using AI and modern web tools.
+      </p>
+      <div class="mt-6 flex justify-center gap-4">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="mailto:mrsalag@hotmail.com" class="px-4 py-2 border border-white rounded hover:bg-white/10">Contact me</a>
       </div>
+    </section>
 
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg">
-        <h4 class="text-xl font-bold mb-2 text-indigo-700 lang" data-en="AI Projects" data-es="Proyectos de IA">AI Projects</h4>
-        <p class="mb-2 lang" data-en="Exploring automation and smart solutions using modern AI models."
-           data-es="Explorando la automatización y soluciones inteligentes utilizando modelos de IA modernos.">
-           Exploring automation and smart solutions using modern AI models.
-        </p>
-        <a href="https://github.com/mrsalag1967" target="_blank" class="text-indigo-700 hover:underline">🔗 GitHub</a>
+    <!-- About -->
+    <section id="about" class="mt-12">
+      <div class="grid md:grid-cols-3 gap-8 items-right">
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-bold text-indigo-700 lang" data-en="About Me" data-es="Sobre mí">About Me</h2>
+          <p class="mt-4 lang" data-en="I am a software developer focused on AI, automation, and building products that scale. I blend logic, design and modern engineering to deliver value."
+             data-es="Soy desarrollador de software enfocado en IA, automatización y en construir productos escalables. Combino lógica, diseño e ingeniería moderna para entregar valor.">
+            I am a software developer focused on AI, automation, and building products that scale. I blend logic, design and modern engineering to deliver value.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li>• AI-driven web & mobile applications</li>
+            <li>• Automation and process optimization</li>
+            <li>• Frontend & backend development (JS / Node / Python)</li>
+          </ul>
+       
+          </div>
+        </aside>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- Services -->
+    <section id="services" class="mt-12">
+      <h3 class="text-2xl font-bold text-indigo-700 text-left lang" data-en="Services" data-es="Servicios">Services</h3>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="card">
+          <h4 class="font-semibold">Web & Frontend</h4>
+          <p class="text-sm mt-2">Responsive interfaces, SPA, PWAs, performance-focused UI.</p>
+        </div>
+        <div class="card">
+          <h4 class="font-semibold">AI Solutions</h4>
+          <p class="text-sm mt-2">Automation, NLP, recommendation systems and intelligent pipelines.</p>
+        </div>
+        <div class="card">
+          <h4 class="font-semibold">Consulting & Architecture</h4>
+          <p class="text-sm mt-2">Product strategy, cloud architecture and scaling guidance.</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="bg-gray-100 py-16 px-6 text-center">
-    <h3 class="text-2xl font-bold mb-8 text-indigo-700 lang" data-en="Contact" data-es="Contacto">Contact</h3>
-    <p class="lang" data-en="Let's collaborate! You can reach me at:" data-es="¡Colaboremos! Puedes contactarme en:">Let's collaborate! You can reach me at:</p>
-    <p class="mt-4 text-lg">
-      📧 <a href="mailto:mrsalag@hotmail.com" class="text-indigo-700 hover:underline">mrsalag@hotmail.com</a>
-    </p>
-    <p class="mt-2">🔗 <a href="https://linkedin.com/in/marcio-salgado-lagos-004653153" class="text-indigo-700 hover:underline">LinkedIn</a></p>
-  </section>
+    <!-- Projects -->
+    <section id="projects" class="mt-12">
+      <h3 class="text-2xl font-bold text-indigo-700 text-left lang" data-en="Projects" data-es="Proyectos">Projects</h3>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <article class="card">
+          
+          <p class="mt-2 text-sm lang" data-en="Company site and projects for SkyAILogic, my software company." data-es="Sitio y proyectos de SkyAILogic, mi empresa de software.">
+            Company site and projects for SkyAILogic, my software company.
+          </p>
+          <div class="mt-4">
+            <a href="https://skyailogic.com" target="_blank" class="text-indigo-700 hover:underline">Visit site →</a>
+            <a href="https://github.com/mrsalag1967/skyailogic" target="_blank" class="ml-4 text-indigo-700 hover:underline">Code (GitHub)</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4 class="font-semibold">AI Demo Project</h4>
+          <p class="mt-2 text-sm lang" data-en="Proof-of-concept using modern LLMs for task automation." data-es="Prueba de concepto usando LLMs modernos para automatizar tareas.">
+            Proof-of-concept using modern LLMs for task automation.
+          </p>
+          <div class="mt-4">
+            <a href="https://github.com/mrsalag1967" target="_blank" class="text-indigo-700 hover:underline">GitHub →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mt-12 mb-12">
+      <h3 class="text-2xl font-bold text-indigo-700 text-left lang" data-en="Contact" data-es="Contacto">Contact</h3>
+      <p class="text-Left mt-4 lang" data-en="Interested in working together? Reach out:" data-es="¿Interesado en colaborar? Contáctame:">Interested in working together? Reach out:</p>
+
+      <div class="max-w-3xl mx-auto mt-6 grid md:grid-cols-3 gap-6 text-center">
+        <div class="card">
+          <div class="font-semibold">Email</div>
+          <div class="mt-2"><a href="mailto:mrsalag@hotmail.com" class="text-indigo-700">mrsalag@hotmail.com</a></div>
+        </div>
+        <div class="card">
+          <div class="font-semibold">Phone</div>
+          <div class="mt-2">+52 222 251 0252</div>
+        </div>
+        <div class="card">
+          <div class="font-semibold">LinkedIn</div>
+          <div class="mt-2"><a href="https://linkedin.com/in/marcio-salgado-lagos-004653153" target="_blank" class="text-indigo-700">Profile</a></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
-  <footer class="bg-indigo-700 text-white text-center py-4">
-    <p>© 2025 Marcio Salgado. All rights reserved.</p>
+  <footer class="bg-white border-t mt-12">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-center text-gray-600">
+      © 2025 Marcio Salgado. All rights reserved. — <a href="https://skyailogic.com" class="text-indigo-700 hover:underline">SkyAILogic</a>
+    </div>
   </footer>
 
-  <!-- Script: Language toggle -->
+  <!-- Scripts -->
   <script>
-    let currentLang = "en";
-    document.getElementById("lang-toggle").addEventListener("click", () => {
-      currentLang = currentLang === "en" ? "es" : "en";
-      document.querySelectorAll(".lang").forEach(el => {
+    // Mobile menu toggle
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      const nav = document.getElementById('mobile-nav');
+      nav.classList.toggle('hidden');
+    });
+
+    // Language toggle (shared for desktop and mobile)
+    let currentLang = 'en';
+    const langToggle = document.getElementById('lang-toggle');
+    const langToggleMobile = document.getElementById('lang-toggle-mobile');
+
+    function applyLang() {
+      document.querySelectorAll('.lang').forEach(el => {
         el.textContent = el.getAttribute(`data-${currentLang}`);
       });
-      document.getElementById("lang-toggle").textContent =
-        currentLang === "en" ? "🇺🇸 EN" : "🇪🇸 ES";
-    });
-  </script>
+      const label = currentLang === 'en' ? '🇺🇸 EN' : '🇪🇸 ES';
+      if (langToggle) langToggle.textContent = label;
+      if (langToggleMobile) langToggleMobile.textContent = label;
+    }
 
+    if (langToggle) langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      applyLang();
+    });
+    if (langToggleMobile) langToggleMobile.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      applyLang();
+    });
+
+    // Apply initial language
+    applyLang();
+  </script>
 </body>
 </html>
